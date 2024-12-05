@@ -3,7 +3,7 @@ import { Order } from './Order';
 import { Utils } from './Utils';
 
 export class OrderBuilder {
-  private static dist(x: Rectangle, y: Rectangle): number {
+  static #dist(x: Rectangle, y: Rectangle): number {
     return Math.hypot(x.x - y.x, x.y - y.y);
   }
 
@@ -30,7 +30,7 @@ export class OrderBuilder {
       for (let i = 0; i < destFrames.length; i++) {
         if (order.has(i)) continue;
 
-        const distance = OrderBuilder.dist(frame, destFrames[i]);
+        const distance = OrderBuilder.#dist(frame, destFrames[i]);
 
         if (distance < minDistance) {
           minDistance = distance;

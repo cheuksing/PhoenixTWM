@@ -1,23 +1,23 @@
 import { SingletonMap } from './SingletonMap';
 
 export class Frames extends SingletonMap<number, Rectangle[]> {
-  private readonly gap: number;
-  private readonly width: number;
-  private readonly height: number;
+  readonly #gap: number;
+  readonly #width: number;
+  readonly #height: number;
 
   constructor(width: number, height: number, gap: number) {
     super();
-    this.width = width;
-    this.height = height;
-    this.gap = gap;
+    this.#width = width;
+    this.#height = height;
+    this.#gap = gap;
   }
 
-  private createFrames(size: number): Rectangle[] {
+  #createFrames(size: number): Rectangle[] {
     let x = 0;
     let y = 0;
-    let w = this.width;
-    let h = this.height;
-    const g = this.gap;
+    let w = this.#width;
+    let h = this.#height;
+    const g = this.#gap;
 
     const result: Rectangle[] = [];
 
@@ -53,12 +53,12 @@ export class Frames extends SingletonMap<number, Rectangle[]> {
         {
           x: 0,
           y: 0,
-          width: this.width,
-          height: this.height,
+          width: this.#width,
+          height: this.#height,
         },
       ];
     } else {
-      return this.createFrames(size);
+      return this.#createFrames(size);
     }
   }
 
