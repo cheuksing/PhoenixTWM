@@ -3,7 +3,7 @@ import { Order } from './Order';
 import { OrderBuilder } from './OrderBuilder';
 import { Utils } from './Utils';
 
-export class PhoenixTWM {
+export default class PhoenixTWM {
   // static #getHoveredWindow(): Window | undefined {
   //   return Window.at(Mouse.location());
   // }
