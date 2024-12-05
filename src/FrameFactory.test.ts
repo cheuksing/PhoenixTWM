@@ -15,6 +15,8 @@ function createRectangle(
 
 describe('FrameFactory', () => {
   let screenKey: ScreenKey;
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore - unused parameter is required for testing
   let frameFactory: FrameFactory;
 
   beforeEach(() => {

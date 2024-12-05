@@ -29,7 +29,7 @@ export class FrameFactory {
       FrameFactory.#instance = new _FrameFactory();
     }
 
-    return FrameFactory.instance;
+    return FrameFactory.#instance;
   }
 
   public static getFrame(idx: number, size: number, key: ScreenKey): Rectangle {
