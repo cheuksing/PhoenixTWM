@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/PhoenixTWM.ts'),
-      formats: ['umd'],
+      formats: ['iife'],
       name: 'PhoenixTWM',
       fileName: () => 'PhoenixTWM.js',
     },
