@@ -12,12 +12,9 @@ export default class PhoenixTWM {
     const size = order.size;
 
     order.toArray().forEach((window, idx) => {
-      const frame = FrameFactory.getFrame(
-        idx,
-        size,
-        Utils.createScreenKey(screen)
-      );
-      window.setFrame(frame);
+      const [key, opts] = Utils.getScreenOptions(screen);
+      const frame = FrameFactory.getFrame(idx, size, key);
+      window.setFrame(Utils.offsetRect(frame, opts.x, opts.y));
     });
   }
 

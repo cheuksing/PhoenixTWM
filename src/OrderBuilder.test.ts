@@ -45,7 +45,10 @@ describe('OrderBuilder', () => {
     ];
 
     vi.spyOn(FrameFactory, 'getFrames').mockReturnValue(frames);
-    vi.spyOn(Utils, 'createScreenKey').mockReturnValue('100-100-4');
+    vi.spyOn(Utils, 'getScreenOptions').mockReturnValue([
+      '100-100-4',
+      { x: 0, y: 0 },
+    ]);
 
     const order = OrderBuilder.buildOrder(screen as unknown as Phoenix.Screen);
 

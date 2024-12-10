@@ -14,10 +14,10 @@ export class OrderBuilder {
       .filter((w) => w.isNormal() && !w.isMinimized());
 
     const size = windows.length;
+    const [key, opts] = Utils.getScreenOptions(screen);
 
-    const destFrames = FrameFactory.getFrames(
-      size,
-      Utils.createScreenKey(screen)
+    const destFrames = FrameFactory.getFrames(size, key).map((f) =>
+      Utils.offsetRect(f, opts.x, opts.y)
     );
 
     const order = new Order();
