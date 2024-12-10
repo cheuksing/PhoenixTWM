@@ -18,6 +18,11 @@ export default class PhoenixTWM {
     });
   }
 
+  public static setGap = Utils.setGap;
+  public static setActiveBorderColor = Utils.setActiveBorderColor;
+  public static setInactiveBorderColor = Utils.setInactiveBorderColor;
+  public static setBorderWidth = Utils.setBorderWidth;
+
   public static refreshCurrentScreenLayout() {
     const screen = Screen.main();
     const order = OrderBuilder.buildOrder(screen);
@@ -38,5 +43,13 @@ export default class PhoenixTWM {
     let order = OrderBuilder.buildOrder(window.screen());
     order = OrderBuilder.moveBackward(order, window);
     PhoenixTWM.#updateFrames(order, window.screen());
+  }
+
+  public static enableJankyBorders() {
+    Task.run('borders', [
+      `active_color=${Utils.activeBorderColor}`,
+      `inactive_color=${Utils.inactiveBorderColor}`,
+      `width=${Utils.borderWidth}.0`,
+    ]);
   }
 }
