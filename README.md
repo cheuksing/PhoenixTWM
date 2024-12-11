@@ -1,7 +1,6 @@
 # PhoenixTWM
 
 This is a helper library for [Phoenix](https://kasper.github.io/phoenix/).
-
 It allows users to control windows like using a tiling window manager such as i3wm.
 
 It is recommended to use with [JankyBorders](https://github.com/FelixKratz/JankyBorders).
@@ -23,3 +22,13 @@ Key.on('r', CTRL_OPT, () => {
 ```
 
 For details, see [example]("./exmaple/basic.js")
+
+## Shortcuts
+
+It is recommended to use MacOS built-in shortcut to control space and focused windows.
+They are usually have better performance and very stable, and will not stop working after MacOS updates.
+
+Below are some default keybindings of some useful shortcuts.
+
+- `^1` - `^9` can scroll to the related space.
+- `^F4` can change focused window on current space.
