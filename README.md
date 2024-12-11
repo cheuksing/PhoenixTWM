@@ -16,7 +16,6 @@ Phoenix allows a lot of freedom to customize. This can solve some each cases whe
 ```js
 require('PhoenixTWM.js');
 Key.on('r', CTRL_OPT, () => {
-  // console.log(PhoenixTWM.refreshCurrentScreenLayout);
   PhoenixTWM.refreshCurrentScreenLayout();
 });
 ```

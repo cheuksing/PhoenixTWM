@@ -12,7 +12,6 @@ const CTRL = ['ctrl'];
 const CTRL_OPT = ['ctrl', 'option'];
 
 Key.on('r', CTRL_OPT, () => {
-  // console.log(PhoenixTWM.refreshCurrentScreenLayout);
   PhoenixTWM.refreshCurrentScreenLayout();
 });
 
