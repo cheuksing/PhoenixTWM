@@ -1,12 +1,12 @@
 /* eslint-disable */
-require('Documents/phoenix-config/dist/PhoenixTWM.js');
+require('Documents/PhoenixTWM/dist/PhoenixTWM.js');
 
-// PhoenixTWM.setActiveBorderColor('0xffe1e3e4');
-// PhoenixTWM.setInactiveBorderColor('0xff494d64');
-// PhoenixTWM.setBorderWidth(5);
-// PhoenixTWM.enableJankyBorders();
+PhoenixTWM.setActiveBorderColor('0xffff00ff');
+PhoenixTWM.setInactiveBorderColor('0xff494d64');
+PhoenixTWM.setBorderWidth(8);
+PhoenixTWM.enableJankyBorders();
 
-// PhoenixTWM.setGap(10);
+PhoenixTWM.setGap(6);
 
 const CTRL = ['ctrl'];
 const CTRL_OPT = ['ctrl', 'option'];

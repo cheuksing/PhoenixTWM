@@ -8,7 +8,7 @@ export default class PhoenixTWM {
   //   return Window.at(Mouse.location());
   // }
 
-  static #updateFrames(order: Order, screen: Phoenix.Screen) {
+  static #updateFrames(order: Order, screen: Screen) {
     const size = order.size;
 
     order.toArray().forEach((window, idx) => {
@@ -45,11 +45,16 @@ export default class PhoenixTWM {
     PhoenixTWM.#updateFrames(order, window.screen());
   }
 
-  public static enableJankyBorders() {
-    Task.run('borders', [
-      `active_color=${Utils.activeBorderColor}`,
-      `inactive_color=${Utils.inactiveBorderColor}`,
-      `width=${Utils.borderWidth}.0`,
-    ]);
+  public static enableJankyBorders(
+    installedPath: string = '/opt/homebrew/bin/borders',
+    killallPath: string = '/usr/bin/killall'
+  ) {
+    Task.run(killallPath, ['borders'], () => {
+      Task.run(installedPath, [
+        `active_color=${Utils.activeBorderColor}`,
+        `inactive_color=${Utils.inactiveBorderColor}`,
+        `width=${Utils.borderWidth}.0`,
+      ]);
+    });
   }
 }

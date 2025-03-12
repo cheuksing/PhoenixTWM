@@ -7,7 +7,7 @@ export class OrderBuilder {
     return Math.hypot(x.x - y.x, x.y - y.y);
   }
 
-  public static buildOrder(screen: Phoenix.Screen): Order {
+  public static buildOrder(screen: Screen): Order {
     const space = screen.currentSpace()!;
     const windows = space
       .windows()

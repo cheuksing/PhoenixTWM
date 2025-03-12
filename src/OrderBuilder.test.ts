@@ -50,7 +50,7 @@ describe('OrderBuilder', () => {
       { x: 0, y: 0 },
     ]);
 
-    const order = OrderBuilder.buildOrder(screen as unknown as Phoenix.Screen);
+    const order = OrderBuilder.buildOrder(screen as unknown as Screen);
 
     expect(order.get(0)?.hash()).toEqual(
       screen.currentSpace().windows()[0].hash()

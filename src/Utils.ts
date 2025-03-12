@@ -11,7 +11,7 @@ export class Utils {
   static inactiveBorderColor: JankyColor = '0xff494d64';
   static borderWidth = 5;
 
-  static getScreenOptions(screen: Phoenix.Screen): [ScreenKey, ScreenOptions] {
+  static getScreenOptions(screen: Screen): [ScreenKey, ScreenOptions] {
     const { x, y, width, height } = screen.flippedVisibleFrame();
     return [`${width}-${height}-${Utils.gap}`, { x, y }];
   }
